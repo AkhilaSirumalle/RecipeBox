@@ -1,56 +1,44 @@
-git_commands.txt
-Name: Akhila sirumalle | ID: 2024EB01527
+git --version
+I ran this to check that Git 2.49.0 is installed and working on my Windows PC.
+
+git config --global user.name / user.email
+I used these to tell Git that the commits are mine: Akhila Sirumalle, akhilasirumalle@gmail.com.
 
 git init
-Initializes a new Git repository in the current folder.
+I used this in my RecipeBox folder to start tracking it as a Git repository.
 
 git branch -M main
-Renames the current branch to main.
+I ran this so my main branch is named main.
 
-git add <file>
-Stages the selected file so it is included in the next commit.
+git add
+Before every commit I used this to pick the files to save (index.html, about.html, .gitignore, demo.txt, git_commands.txt).
 
-git commit -m "message"
-Creates a commit containing the staged changes with a descriptive message.
+git commit -m
+This saves the staged files as a snapshot with a message. My first message was "Create RecipeBox home and about pages".
 
 git branch feature
-Creates a new branch named feature.
+This creates a new line of work called feature, separate from main.
 
-git switch feature
-Switches the working directory to the feature branch.
+git switch feature / git switch main
+I used these to move between the feature and main branches and change the files in my folder to match each one.
 
-git switch main
-Switches the working directory back to the main branch.
-
-git merge --no-ff feature -m "Merge feature into main"
-Merges feature into main and always creates a merge commit, so the branch activity is visible in history.
+git merge --no-ff
+I used this to bring the feature branch into main, and --no-ff makes sure a merge commit is always created (9c20aca).
 
 git log --oneline --graph --decorate --all
-Displays a compact commit history with branch and merge relationships.
+This shows the history of all branches as a graph, including where feature split from main and joined back.
+
+git log --oneline --all
+This shows a short list of commit IDs and messages across all branches.
 
 git status
-Shows the current branch and the state of the working tree (modified, staged, untracked files).
+I used this to see which files were modified, staged, or untracked, and whether the working tree was clean.
 
 git status --short
-Shows a concise summary of modified, staged, and untracked files.
+This is the same as status but shows one short line per file.
 
-git check-ignore -v <file>
-Checks whether a file or folder is ignored and shows which .gitignore rule matches.
+git check-ignore -v
+I used this to check debug.log and temp/notes.txt and see which .gitignore rules matched them (*.log and temp/).
 
 git revert --no-edit HEAD
-Creates a new commit that reverses the changes of the latest commit, keeping history intact.
-
-git remote add origin <URL>
-Connects the local repository to the remote GitHub repository named origin.
-
-git remote -v
-Displays the URLs configured for the remote repositories.
-
-git push -u origin main
-Pushes the main branch to GitHub and sets its upstream tracking branch.
-
-git push -u origin feature
-Pushes the feature branch to GitHub and sets its upstream tracking branch.
-
-git push
-Pushes new commits on the current branch to its upstream branch on GitHub.
+This undoes my last commit by adding a new commit that removes demo.txt, so the old history stays intact (4c4f498).
