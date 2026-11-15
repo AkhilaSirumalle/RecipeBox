@@ -1,0 +1,56 @@
+git_commands.txt
+Name: Akhila sirumalle | ID: 2024EB01527
+
+git init
+Initializes a new Git repository in the current folder.
+
+git branch -M main
+Renames the current branch to main.
+
+git add <file>
+Stages the selected file so it is included in the next commit.
+
+git commit -m "message"
+Creates a commit containing the staged changes with a descriptive message.
+
+git branch feature
+Creates a new branch named feature.
+
+git switch feature
+Switches the working directory to the feature branch.
+
+git switch main
+Switches the working directory back to the main branch.
+
+git merge --no-ff feature -m "Merge feature into main"
+Merges feature into main and always creates a merge commit, so the branch activity is visible in history.
+
+git log --oneline --graph --decorate --all
+Displays a compact commit history with branch and merge relationships.
+
+git status
+Shows the current branch and the state of the working tree (modified, staged, untracked files).
+
+git status --short
+Shows a concise summary of modified, staged, and untracked files.
+
+git check-ignore -v <file>
+Checks whether a file or folder is ignored and shows which .gitignore rule matches.
+
+git revert --no-edit HEAD
+Creates a new commit that reverses the changes of the latest commit, keeping history intact.
+
+git remote add origin <URL>
+Connects the local repository to the remote GitHub repository named origin.
+
+git remote -v
+Displays the URLs configured for the remote repositories.
+
+git push -u origin main
+Pushes the main branch to GitHub and sets its upstream tracking branch.
+
+git push -u origin feature
+Pushes the feature branch to GitHub and sets its upstream tracking branch.
+
+git push
+Pushes new commits on the current branch to its upstream branch on GitHub.
